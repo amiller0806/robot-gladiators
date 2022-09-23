@@ -1,17 +1,32 @@
 var playerName = window.prompt("What is your robot's name?");
- console.log(playerName);
+var playerHealth = 100;
+var playerAttack =10;
+var playerMoney = 10;
+// You can also log multiple values like this
+ console.log(playerName, playerAttack, playerHealth);
 
- console.log("This logs a string, good for leaving yourself a message");
-//  this will do math and log 20 
-console.log(10 + 10);
-// This is string concatenation! In string concatenation, we can write out a string as we typically would, 
-// but in order to include variable data, we need to close the string. 
-// To do that, put a plus sign + after the closing quotation, then write the variable name.
-// Also, when we concatenate strings we need to include a leading or trailing space in our string 
-// so that the concatenated variable doesn't run up against the word before or after it.
-console.log("Our robot's name is " + playerName);
-// This creates a function named "fight"
-function fight() {
-    window.alert("The fight has begun!");
+
+ var enemyName = "Roborto";
+ var enemyHealth = 50;
+ var enemyAttack = 12;
+
+ var fight = function() {
+    window.alert ("Welcome to Robot Gladiators!");
+
+
+ enemyHealth = enemyHealth - playerAttack;
+ console.log (playerName + " attacked" + enemyName + "." + enemyName + " and now has" + enemyHealth + " health remaining.");
+
+ //  check enemy's health
+if (enemyHealth <= 0) {
+    window.alert(enemyName + " has died!");
 }
-// fight();
+else {
+    window.alert(enemyName + " still has " + enemyHealth + " health left.");
+}
+
+playerHealth = playerHealth - enemyAttack;
+console.log (enemyName + " attacked" + playerName + "." + playerName + " and now has" + playerHealth + " health remaining.");
+ };
+//  execute function
+fight();
